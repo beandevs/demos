@@ -120,7 +120,20 @@ function getLocation(){
     function error(err){
       // return the error message
       msg = 'Error: ' + err + ' :(';
-      outputResult(msg); // output button
+	      switch(err.code) {
+    case error.PERMISSION_DENIED:
+      outputResult("User denied the request for Geolocation :(");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      outputResult("Location information is unavailable.");
+      break;
+    case error.TIMEOUT:
+      outputResult("The request to get user location timed out.");
+      break;
+    case error.UNKNOWN_ERROR:
+      outputResult("An unknown error occurred.");
+      break;
+  }
       $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-error'); // change button style
     }  
   } // end requestLocation();
