@@ -39,6 +39,9 @@ button{
 }
 .result img{
   margin-top: 1em;
+	max-width:100%;
+	margin-left:auto;
+	margin-right:auto;
   border: 1px solid #333; 
 }
 .fa-spinner{
@@ -111,7 +114,7 @@ function getLocation(){
       var lng = pos.coords.longitude;
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
-      msg = 'You appear to be at longitude: ' + lng + ' and latitude: ' + lat  + '<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=18&size=300x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C' + lat + ',' + lng+ '&key=AIzaSyAdpACRyraDLEtEAk2dwx-oTaZ-nGUfhcA">';
+      msg = 'You appear to be at longitude: ' + lng + ' and latitude: ' + lat  + '<img src="https://maps.googleapis.com/maps/api/staticmap?zoom=20&size=300x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C' + lat + ',' + lng+ '&key=AIzaSyAdpACRyraDLEtEAk2dwx-oTaZ-nGUfhcA">';
       outputResult(msg); // output message
       $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-success'); // change button style
     }
